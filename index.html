@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для моей любимой ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; overflow-y: auto; background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a18cd1, #fbc2eb); background-size: 400% 400%; animation: gradientBG 15s ease infinite; }
+        .font-caveat { font-family: 'Caveat', cursive; }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        
+        .glass-card { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px 0 rgba(255, 100, 150, 0.3); }
+        .btn-glow { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 105, 180, 0.6); animation: pulse-glow 2s infinite; }
+        @keyframes pulse-glow { 0% { box-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 30px rgba(255,105,180,0.4); } 50% { box-shadow: 0 0 25px rgba(255,255,255,0.9), 0 0 50px rgba(255,105,180,0.8); } 100% { box-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 30px rgba(255,105,180,0.4); } }
+        
+        .heart-float { position: absolute; animation: floatUp var(--float-duration) linear infinite; opacity: 0; z-index: 0; pointer-events: none; filter: drop-shadow(0px 0px 5px rgba(255,255,255,0.5)); }
+        @keyframes floatUp { 0% { transform: translateY(110vh) scale(var(--scale)) rotate(var(--rot-start)); opacity: 0; } 10% { opacity: var(--max-opacity); } 90% { opacity: var(--max-opacity); } 100% { transform: translateY(-10vh) scale(var(--scale)) rotate(var(--rot-end)); opacity: 0; } }
+        .particle { position: absolute; pointer-events: none; z-index: 50; animation: pop var(--pop-duration) cubic-bezier(0.15, 0.85, 0.35, 1.2) forwards; }
+        @keyframes pop { 0% { transform: translate(0, 0) scale(0.5) rotate(0deg); opacity: 1; } 100% { transform: translate(var(--tx), var(--ty)) scale(1.5) rotate(var(--rot)); opacity: 0; } }
+        .transition-all-custom { transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    </style>
+</head>
+<body class="relative min-h-screen w-full flex items-center justify-center text-gray-800 py-12">
+    <div id="bg-hearts-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+    <div id="btn-container" class="relative z-10 flex flex-col items-center justify-center transition-all duration-500 transform">
+        <button onclick="revealMessage(event)" class="btn-glow px-8 py-4 rounded-full bg-white/30 backdrop-blur-md border border-white/50 text-white font-semibold text-2xl md:text-3xl tracking-wide hover:bg-white/40 hover:scale-105 transition-all duration-300 flex items-center gap-3 group">
+            Нажми сюда <span class="inline-block group-hover:animate-ping text-red-500 text-3xl">❤️</span>
+        </button>
+        <p class="mt-6 text-white/80 font-medium text-sm md:text-base animate-pulse">Для самой красивой🥇</p>
+    </div>
+    
+    <div id="message-container" class="relative z-20 hidden w-11/12 max-w-2xl transition-all-custom opacity-0 scale-90 translate-y-8">
+        <div class="glass-card rounded-3xl p-8 md:p-14 text-center">
+            <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-4 shadow-lg border border-pink-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-500 animate-bounce" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <h1 class="font-caveat text-4xl md:text-6xl text-pink-600 mb-6 font-bold leading-tight mt-4 drop-shadow-sm">Моей зайке</h1>
+            <div class="space-y-4 md:space-y-6 text-base md:text-xl font-medium text-gray-700 leading-relaxed">
+                <p>Никуся моя, поздравляю тебя с твоим днём!</p>
+                <p>Ты самое прекрасное, что есть в моей жизни. Спасибо за то что даришь мне радость и что твоя улыбка делает мой мир ярче, каждый день - как новый глоток воздуха благодаря тебе. Всё в тебе просто замечательно🤩😍😘</p>
+                <p>Желаю тебе целый океан счастья, чтобы тебя всегда окружали близкие и любимые тебе люди, каждый день искренних улыбок и позитивных моментов, которые ты запомнишь навсегда! Оставайся такой же сногшибательной девушкой😘❤️. Желаю тебе преодолеть все преграды на пути к твоим мечтам 🤑 Никогда не сомневайся в себе, ты чудесная и у тебя получиться всё к чему ты стремишься. Мне очень повезло встретить такую как ты🥰 Пусть тебя сопровождает постоянная любовь, успех и вдохновение!</p>
+                <p class="font-caveat text-3xl md:text-4xl text-purple-500 mt-2 font-bold">С Днём рождения солнце!!💜🎈🎉</p>
+                <p class="font-caveat text-3xl md:text-4xl text-red-500 mt-8 font-bold">Я тебя просто обожаю и восхищаюсь тобой! ❤️🥰🎈</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const emojis = ['❤️', '🍾', '🎉', '🎁', '🎈', '🥰'];
+        function createBackgroundHeart() {
+            const container = document.getElementById('bg-hearts-container');
+            const heart = document.createElement('div');
+            const isRedHeart = Math.random() > 0.4;
+            heart.innerHTML = isRedHeart ? '🎁' : emojis[Math.floor(Math.random() * emojis.length)];
+            heart.className = 'heart-float text-xl md:text-3xl';
+            const left = Math.random() * 100; const duration = Math.random() * 8 + 6; const scale = Math.random() * 0.8 + 0.4; const rotStart = Math.random() * 60 - 30; const rotEnd = Math.random() * 180 - 90; const opacity = Math.random() * 0.4 + 0.3;
+            heart.style.left = `${left}vw`; heart.style.setProperty('--float-duration', `${duration}s`); heart.style.setProperty('--scale', scale); heart.style.setProperty('--rot-start', `${rotStart}deg`); heart.style.setProperty('--rot-end', `${rotEnd}deg`); heart.style.setProperty('--max-opacity', opacity);
+            container.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, duration * 1000);
+        }
+        setInterval(createBackgroundHeart, 400);
+        for (let i = 0; i < 15; i++) { setTimeout(createBackgroundHeart, i * 100); }
+        
+        function revealMessage(event) {
+            const btnContainer = document.getElementById('btn-container'); const msgContainer = document.getElementById('message-container');
+            let x = event.clientX; let y = event.clientY;
+            if((!x || !y) && event.touches && event.touches.length > 0) { x = event.touches[0].clientX; y = event.touches[0].clientY; }
+            if(!x || !y) { const rect = event.target.getBoundingClientRect(); x = rect.left + rect.width / 2; y = rect.top + rect.height / 2; }
+            createExplosion(x, y);
+            btnContainer.classList.add('opacity-0', 'scale-50');
+            setTimeout(() => {
+                btnContainer.classList.add('hidden'); msgContainer.classList.remove('hidden'); void msgContainer.offsetWidth;
+                msgContainer.classList.remove('opacity-0', 'scale-90', 'translate-y-8'); msgContainer.classList.add('opacity-100', 'scale-100', 'translate-y-0');
+            }, 500);
+        }
+        
+        function createExplosion(x, y) {
+            const particleCount = 40;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div'); particle.className = 'particle text-2xl md:text-4xl';
+                particle.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                particle.style.left = `${x}px`; particle.style.top = `${y}px`;
+                const angle = Math.random() * Math.PI * 2; const distance = Math.random() * 200 + 50; const tx = Math.cos(angle) * distance; const ty = Math.sin(angle) * distance; const rot = Math.random() * 360; const duration = Math.random() * 0.8 + 0.6;
+                particle.style.setProperty('--tx', `${tx}px`); particle.style.setProperty('--ty', `${ty}px`); particle.style.setProperty('--rot', `${rot}deg`); particle.style.setProperty('--pop-duration', `${duration}s`);
+                document.body.appendChild(particle);
+                setTimeout(() => { particle.remove(); }, duration * 1000);
+            }
+        }
+    </script>
+</body>
+</html>
